@@ -9,6 +9,7 @@ SET(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/)
 # Include libraries
 find_package(Eigen3 REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system filesystem thread date_time)
+set(MATLAB_ROOT /usr/local/MATLAB/R2016b)
 find_package(Matlab 3 REQUIRED)
 
 

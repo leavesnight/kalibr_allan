@@ -113,6 +113,7 @@ endif()
 
 # Find out where MATLAB libraries are
 IF (NOT MATLAB_LIBRARIES)
+    set(MATLAB_LIBRARIES "")
     if (WIN32)
         # Directory name depending on whether the Windows architecture is 32
         # bit or 64 bit
@@ -155,7 +156,7 @@ IF (NOT MATLAB_LIBRARIES)
 
         # There seems to be no way to let cmake do a search in subdirectories, so use "find"
         execute_process(
-                COMMAND find "${MATLAB_ROOT}/bin" -name libmex${LIBRARY_EXTENSION}
+                COMMAND find "${MATLAB_ROOT}/bin/glnxa64/" -name libmex${LIBRARY_EXTENSION}
                 COMMAND xargs echo -n
                 OUTPUT_VARIABLE mex_lib
         )
@@ -175,6 +176,8 @@ endif() # MATLAB_LIBRARIES
 
 if (WIN32)
     set(BATEXT .bat)
+    set(LIBPREFIX lib)
+else()
     set(LIBPREFIX lib)
 endif()
 
