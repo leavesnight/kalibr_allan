@@ -83,7 +83,7 @@ sigmab = h_fit2(tauid2);
 
 % Plot the values
 str1 = sprintf('\\sigma = %.6f %s',h_fit1(tauid1),unit1);
-str2 = sprintf('\\sigma_{b} = %.6f %s',h_fit2(tauid2),unit2);
+str2 = sprintf('\\sigma_{b} = %.8f %s',h_fit2(tauid2),unit2);
 text(.1,.15,{str1,str2},'Units','normalized'); %'FontWeight','bold'
 
 
